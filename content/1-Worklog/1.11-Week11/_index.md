@@ -16,11 +16,11 @@ pre: " <b> 1.11. </b> "
 
 | Day | Task | Start Date | Completion Date |
 | --- | --- | --- | --- |
-| 2 | - **Project Review:** Conduct a comprehensive review of system functionalities and test the overall stability of the application. | 06/29/2026 | 06/29/2026 |
-| 3 | - **Optimization & Bug Fixing:** Troubleshoot minor bugs detected during testing and fine-tune system configurations. | 06/30/2026 | 06/30/2026 |
-| 4 | - **Training Report (Workshop Report) Setup:** Initialize the Hugo framework for the report site, configure `config.toml`, and set up the documentation layout. | 07/01/2026 | 07/01/2026 |
-| 5 | - **Drafting the Proposal Section:** Compile information and write the project introduction and overview for Chapter 2. | 07/02/2026 | 07/02/2026 |
-| 6 | - **Compiling Weekly Worklogs:** Write and update the weekly worklog content for the initial weeks on the training report website. | 07/03/2026 | 07/03/2026 |
+| Mon | - **Project Review:** Conduct a comprehensive review of system functionalities and test the overall stability of the application. | 29/06/2026 | 29/06/2026 |
+| Tue | - **Optimization & Bug Fixing:** Troubleshoot minor bugs detected during testing and fine-tune system configurations. | 30/06/2026 | 30/06/2026 |
+| Wed | - **Training Report (Workshop Report) Setup:** Initialize the Hugo framework for the report site, configure `config.toml`, and set up the documentation layout. | 01/07/2026 | 01/07/2026 |
+| Thu | - **Drafting the Proposal Section:** Compile information and write the project introduction and overview for Chapter 2. | 02/07/2026 | 02/07/2026 |
+| Fri | - **Compiling Weekly Worklogs:** Write and update the weekly worklog content for the initial weeks on the training report website. | 03/07/2026 | 03/07/2026 |
 
 ### Week 11 Achievements:
 

@@ -67,9 +67,9 @@ pre: " <b> 4.1. </b> "
 
 #### Một số hình ảnh khi tham gia sự kiện
 ![Ảnh check-in sự kiện](/images/4-EventParticipated/checkin1.png)
-*Minh chứng tham gia sự kiện đúng giờ*
+
 
 ![Ảnh tại sự kiện](/images/4-EventParticipated/event1.jpg)
-*Diễn giả Duc Dao đang chia sẻ về tính phi quyết định (Non-Determinism) của LLM*
+
 
 > Tham gia FCAJ Community Day không chỉ mang lại cho tôi những cập nhật công nghệ mới nhất về AWS và GenAI, mà còn cung cấp những góc nhìn thực tế từ các bài toán doanh nghiệp, giúp tôi định hướng tốt hơn con đường phát triển chuyên môn sắp tới.

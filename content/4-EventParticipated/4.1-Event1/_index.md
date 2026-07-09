@@ -67,9 +67,8 @@ pre: " <b> 4.1. </b> "
 
 #### Event Photos
 ![Event check-in](/images/4-EventParticipated/checkin1.png)
-*Event check-in proof*
 
 ![Presentation photo](/images/4-EventParticipated/event1.jpg)
-*Speaker Duc Dao presenting on the Non-Determinism of LLMs*
+
 
 > Attending FCAJ Community Day not only brought me the latest technology updates on AWS and GenAI but also provided practical insights from enterprise problem-solving, helping me better orient my future professional development path.

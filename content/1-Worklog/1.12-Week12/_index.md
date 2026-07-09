@@ -16,10 +16,10 @@ pre: " <b> 1.12. </b> "
 
 | Day | Task | Start Date | Completion Date |
 | --- | --- | --- | --- |
-| 2 | - **Team Collaboration for Chapter 3:** Work together with team members to compile and write the content for Chapter 3 (blogsPosted). | 07/06/2026 | 07/06/2026 |
-| 3 | - **Team Collaboration for Chapter 5:** Collaborate with the team to write and format Chapter 5 (workshop) exercises. | 07/07/2026 | 07/07/2026 |
-| 4 | - **Personal Tasks Finalization (Part 1):** Self-draft the personal self-evaluation (Self-assessment) and compile personal weekly worklogs from Week 6 to Week 10. | 07/08/2026 | 07/08/2026 |
-| 5 | - **Finalization, Review & Report Submission:** Write personal worklogs for Weeks 11 and 12, translate personal report sections into English, check Hugo site image links, and submit the final internship report. | 07/09/2026 | 07/09/2026 |
+| Mon | - **Team Collaboration for Chapter 3:** Work together with team members to compile and write the content for Chapter 3 (blogsPosted). | 06/07/2026 | 06/07/2026 |
+| Tue | - **Team Collaboration for Chapter 5:** Collaborate with the team to write and format Chapter 5 (workshop) exercises. | 07/07/2026 | 07/07/2026 |
+| Wed | - **Personal Tasks Finalization (Part 1):** Self-draft the personal self-evaluation (Self-assessment) and compile personal weekly worklogs from Week 6 to Week 10. | 08/07/2026 | 08/07/2026 |
+| Thu | - **Finalization, Review & Report Submission:** Write personal worklogs for Weeks 11 and 12, translate personal report sections into English, check Hugo site image links, and submit the final internship report. | 09/07/2026 | 09/07/2026 |
 
 ### Week 12 Achievements:
 

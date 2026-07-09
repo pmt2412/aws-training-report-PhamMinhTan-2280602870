@@ -38,9 +38,9 @@ Although I participated as an audience member watching the matches, I gathered m
 
 #### Event Photos
 ![Event check-in](/images/4-EventParticipated/checkin2.png)
-*Event check-in proof*
+
 
 ![Presentation photo](/images/4-EventParticipated/event2.jpg)
-*Group photo of the event participants*
+
 
 > Attending the event on June 20 was not just a professional competition but also a living, practical lesson in strategy, psychology, and team spirit.

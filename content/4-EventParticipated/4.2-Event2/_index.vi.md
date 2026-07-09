@@ -38,9 +38,8 @@ Dù tham gia với vai trò khán giả theo dõi diễn biến trận đấu, t
 
 #### Một số hình ảnh khi tham gia sự kiện
 ![Ảnh check-in sự kiện](/images/4-EventParticipated/checkin2.png)
-*Minh chứng tham gia sự kiện đúng giờ*
+
 
 ![Ảnh tại sự kiện](/images/4-EventParticipated/event2.jpg)
-*Hình ảnh tập thể của các thành viên tham gia sự kiện*
 
 > Sự kiện ngày 20/06 không chỉ là một buổi thi đấu chuyên môn đơn thuần mà còn là một bài học thực tế sống động về chiến lược, tâm lý và tinh thần đồng đội.
