@@ -40,7 +40,6 @@ pre: " <b> 1.7. </b> "
 ### Screenshots
 
 ![Multi-Tenant Login Interface](/images/1-Worklog/login.png)
-![Multi-language Interface - Vietnamese](/images/1-Worklog/VIE.png)
-![Multi-language Interface - English](/images/1-Worklog/eng.png)
+![Multi-language Interface - Vietnamese](/images/1-Worklog/VIE.png) ![Multi-language Interface - English](/images/1-Worklog/eng.png)
 ![Employee Management Interface](/images/1-Worklog/staff.png)
 ![System Health Check Interface](/images/1-Worklog/healthcheck.png)

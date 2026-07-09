@@ -40,7 +40,6 @@ pre: " <b> 1.7. </b> "
 ### Hình ảnh minh họa
 
 ![Giao diện đăng nhập Multi-Tenant](/images/1-Worklog/login.png)
-![Giao diện đa ngôn ngữ - Tiếng Việt](/images/1-Worklog/VIE.png)
-![Giao diện đa ngôn ngữ - Tiếng Anh](/images/1-Worklog/eng.png)
+![Giao diện đa ngôn ngữ - Tiếng Việt](/images/1-Worklog/VIE.png) ![Giao diện đa ngôn ngữ - Tiếng Anh](/images/1-Worklog/eng.png)
 ![Giao diện Quản lý nhân viên](/images/1-Worklog/staff.png)
 ![Giao diện Health Check hệ thống](/images/1-Worklog/healthcheck.png)
