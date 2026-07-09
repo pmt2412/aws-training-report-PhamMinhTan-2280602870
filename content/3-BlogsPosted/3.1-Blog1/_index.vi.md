@@ -1,28 +1,39 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-06-19
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
-# SESSION POLICIES TRONG AMAZON EKS POD IDENTITY
+# CUNG CẤP THÔNG TIN XÁC THỰC CƠ SỞ DỮ LIỆU BẢO MẬT CHO CÁC HÀM LAMBDA BẰNG AWS SECRETS MANAGER
 
-Amazon EKS Pod Identity vừa bổ sung tính năng session policies, cho phép bạn thu hẹp quyền IAM một cách linh hoạt và chính xác cho từng pod mà không cần tạo thêm nhiều IAM roles riêng biệt. Đây là bước tiến quan trọng giúp áp dụng nguyên tắc least privilege hiệu quả hơn trong môi trường Kubernetes quy mô lớn.
+Sử dụng AWS Secrets Manager giúp bảo mật credentials của cơ sở dữ liệu và truyền chúng cho các hàm AWS Lambda khi kết nối với Amazon RDS (MySQL). Giải pháp này giúp loại bỏ việc hardcode mật khẩu trong mã nguồn hoặc truyền qua các biến môi trường, từ đó bảo vệ cơ sở dữ liệu backend một cách an toàn hơn. Ngoài ra, tính năng tự động rotate mật khẩu định kỳ giúp giảm thiểu rủi ro bảo mật.
 
-Các điểm chính cần nắm:
+Mô hình hoạt động của giải pháp bao gồm:
 
-* Session policy là một IAM policy inline được chỉ định khi tạo hoặc cập nhật Pod Identity association.
-* Quyền hiệu quả = intersection (giao) giữa permissions của IAM role và session policy → session policy chỉ có thể thu hẹp, không thể mở rộng quyền.
-* Giúp tránh tình trạng over-permissioning khi reuse chung một IAM role cho nhiều workloads có nhu cầu khác nhau.
-* Hỗ trợ cả same-account và cross-account (qua IAM role chaining).
-* Giảm đáng kể số lượng IAM roles cần quản lý, tránh chạm giới hạn quota IAM trong cluster lớn.
-* Cấu hình dễ dàng qua AWS Management Console, AWS CLI hoặc AWS SDK khi tạo association giữa Kubernetes ServiceAccount và IAM role.
+* Client gửi Request đến RESTful API được lưu trữ trên AWS API Gateway.
+* API Gateway thực thi hàm AWS Lambda tương ứng.
+* Hàm Lambda gọi API của AWS Secrets Manager để lấy thông tin đăng nhập cơ sở dữ liệu (username/password).
+* Hàm Lambda sử dụng thông tin đó để kết nối, truy vấn cơ sở dữ liệu Amazon RDS (MySQL) và trả lại kết quả.
 
-Tính năng này đặc biệt hữu ích khi bạn có nhiều ứng dụng chạy trên cùng một IAM role nhưng cần giới hạn quyền khác nhau (ví dụ: một pod chỉ đọc S3 bucket cụ thể, pod khác chỉ gọi một số API nhất định).
+Quy trình triển khai thông qua CloudFormation
 
-...Hình ảnh...
+Giải pháp sử dụng một template AWS CloudFormation để tự động hóa việc khởi tạo:
 
-...Link...
+* Một cơ sở dữ liệu RDS MySQL (loại instance db.t3.micro).
+* Hai hàm Lambda: Một hàm (LambdaRDSCFNInit) dùng để tạo bảng Employees và thêm dữ liệu mẫu ngay sau khi khởi tạo stack; một hàm (LambdaRDSTest) dùng để truy vấn đếm số lượng nhân viên.
+* Một RESTful API Gateway với phương thức GET.
+* Một tài nguyên Secret trong Secrets Manager với mật khẩu được tạo ngẫu nhiên.
 
-...Hướng dẫn...
+Điểm cốt lõi về mặt kỹ thuật:
+
+* **Tham chiếu động (Dynamic References):** CloudFormation sử dụng tính năng tham chiếu động để lấy mật khẩu từ Secrets Manager khi tạo RDS instance. Điều này đảm bảo CloudFormation không ghi log hoặc lưu lại mật khẩu dưới dạng văn bản thuần túy (plain text).
+* **Tự động xoay vòng mật khẩu (Automatic Rotation):** Cấu hình tài nguyên AWS SecretsManager RotationSchedule phối hợp với một hàm Lambda xoay vòng để tự động thay đổi mật khẩu cơ sở dữ liệu RDS sau mỗi 30 ngày.
+
+Việc kết hợp Lambda với AWS Secrets Manager giúp tự động quản lý vòng đời của các thông tin nhạy cảm, giảm chi phí vận hành hạ tầng bảo mật riêng và nâng cao đáng kể mức độ an toàn cho các ứng dụng Serverless.
+
+![Hình Ảnh](/images/3-BlogsPosted/blog1.1.jpg)
+
+- **Link bài viết:** [Bài viết trên AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/posts/2187144322050528)
+- **Link blog:** [How to securely provide database credentials to Lambda functions by using AWS Secrets Manager](https://aws.amazon.com/vi/blogs/security/how-to-securely-provide-database-credentials-to-lambda-functions-by-using-aws-secrets-manager/?fbclid=IwY2xjawS3AUNleHRuA2FlbQIxMABicmlkETFWanVNbWhjdjRGR0g4NEFxc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHu4APzf301MYy7P9_61k2xiY8s_uPcppPQp_j0D1ebu-DsVcDHbhTa6vYkDd_aem_n-kVGqUxYdH_v_p1Btu0RA)

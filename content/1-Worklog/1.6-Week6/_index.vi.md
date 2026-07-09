@@ -1,55 +1,40 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-05-25
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Bàn luận lên kế hoạch, phân chia công việc chi tiết giữa các thành viên trong nhóm.
+* Bắt tay vào xây dựng hệ thống backend (kiến trúc Microservices) của project.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 2 | - Họp nhóm: Bàn luận lên kế hoạch, phân chia công việc. <br> - Khởi tạo tài liệu kế hoạch triển khai. | 25/05/2026 | 25/05/2026 |
+| 3 | - **Auth-service:** Thiết lập kiến trúc, logic chính. <br> - **Bảo mật:** Cài đặt mã hóa mật khẩu và cơ chế sinh/xác minh JWT Token. | 26/05/2026 | 26/05/2026 |
+| 4 | - **API Xác thực:** Viết các endpoint Đăng ký, Đăng nhập, quản lý người dùng, đổi mật khẩu. <br> - **Schemas:** Thiết lập Pydantic model validate I/O. | 27/05/2026 | 27/05/2026 |
+| 5 | - **Database (CRUD):** Viết hàm tạo người dùng, liên kết công ty (tenant) và phân quyền. | 28/05/2026 | 28/05/2026 |
+| 6 | - **Hỗ trợ Frontend:** Cập nhật giao diện Frontend. <br> - **Hỗ trợ Backend:** Review và fix các file core/schema bên `hr-service` và `tenant-service`. | 29/05/2026 | 29/05/2026 |
+| 7/CN | - Phối hợp nhóm: Tích hợp hệ thống, kiểm tra chéo các service (Auth, HR, Tenant) và kiến trúc tổng thể. | 30/05/2026 | 31/05/2026 |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Hoàn thành việc bàn luận lên kế hoạch và phân chia công việc cụ thể giữa các thành viên trong nhóm.
+* **Chi tiết công việc cá nhân hoàn thành:**
+    * **Xây dựng auth-service:** Thiết lập thành công kiến trúc và logic cốt lõi cho service xác thực.
+    * **Xử lý bảo mật (Security):** Cài đặt mã hóa mật khẩu và cơ chế sinh/xác minh JWT Token.
+    * **Xây dựng API xác thực:** Hoàn thiện các endpoint quan trọng như Đăng ký (Register), Đăng nhập (Login), quản lý thông tin người dùng, đổi mật khẩu và mời người dùng mới vào hệ thống.
+    * **Tương tác Cơ sở dữ liệu (CRUD):** Viết các hàm tương tác database để tạo người dùng mới, liên kết người dùng với từng công ty (tenant) riêng biệt và phân quyền người dùng.
+    * **Định nghĩa dữ liệu (Schemas):** Thiết lập các Pydantic model để validate dữ liệu đầu vào/đầu ra cho các API.
+    * **Hỗ trợ Frontend:** Cập nhật giao diện Frontend kết nối với API.
+    * **Hỗ trợ Backend:** Review và sửa lỗi đồng bộ các file core/schema bên `hr-service` và `tenant-service` để đảm bảo hệ thống tích hợp trơn tru.
+### Hình ảnh minh họa
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+![API 1](/images/1-Worklog/api1.jpg)
+![API 2](/images/1-Worklog/api2.jpg)
+![API 3](/images/1-Worklog/api3.jpg)    

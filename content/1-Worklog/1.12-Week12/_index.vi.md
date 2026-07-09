@@ -1,55 +1,30 @@
 ---
 title: "Worklog Tuần 12"
-date: 2024-01-01
-weight: 2
+date: 2026-07-06
+weight: 12
 chapter: false
-pre: " <b> 1.12 </b> "
+pre: " <b> 1.12. </b> "
 ---
+
 
 ### Mục tiêu tuần 12:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Phối hợp cùng các thành viên trong nhóm hoàn thiện nội dung chương 3 và chương 5 cho trang báo cáo.
+* Tự hoàn thiện các phần việc cá nhân còn lại để đóng gói và nộp báo cáo thực tập cuối cùng.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 2 | - **Hợp tác nhóm viết chương 3:** Làm việc cùng các thành viên để viết và tổng hợp nội dung cho chương 3. | 06/07/2026 | 06/07/2026 |
+| 3 | - **Hợp tác nhóm viết chương 5:** Phối hợp cùng nhóm để biên soạn và hoàn thiện nội dung chương 5. | 07/07/2026 | 07/07/2026 |
+| 4 | - **Hoàn thiện công việc cá nhân (Phần 1):** Tự viết phần tự đánh giá cá nhân và tổng hợp nhật ký công việc từ tuần 6 đến tuần 10. | 08/07/2026 | 08/07/2026 |
+| 5 | - **Hoàn thiện, kiểm tra và nộp báo cáo:** Viết nhật ký tuần 11, 12, dịch nội dung sang tiếng Anh, kiểm tra hiển thị liên kết hình ảnh toàn bộ dự án Hugo và tiến hành nộp báo cáo thực tập. | 09/07/2026 | 09/07/2026 |
 
 ### Kết quả đạt được tuần 12:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Về công việc nhóm:**
+  * Hoàn thành biên soạn và cập nhật đầy đủ nội dung chương 3 và chương 5 trên trang báo cáo chung.
+* **Về công việc cá nhân:**
+  * Tự hoàn thiện toàn bộ các nội dung báo cáo cá nhân bao gồm Tự đánh giá và Nhật ký công việc đầy đủ cho cả hai ngôn ngữ (tiếng Việt và tiếng Anh).
+  * Rà soát kỹ lưỡng toàn bộ cấu trúc và hiển thị trang báo cáo thực tập cá nhân trước khi hoàn tất kỳ thực tập.

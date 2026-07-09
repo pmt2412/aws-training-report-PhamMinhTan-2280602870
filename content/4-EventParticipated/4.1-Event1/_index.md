@@ -1,126 +1,75 @@
 ---
 title: "Event 1"
-date: 2024-01-01
+date: 2026-05-23
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** into your report, including this warning.
-{{% /notice %}}
-
-# Summary Report: “GenAI-powered App-DB Modernization workshop”
+# Summary Report: “FCAJ Community Day” (May 23)
 
 ### Event Objectives
 
-- Share best practices in modern application design
-- Introduce Domain-Driven Design (DDD) and event-driven architecture
-- Provide guidance on selecting the right compute services
-- Present AI tools to support the development lifecycle
+- Update on the latest trends and mindsets regarding Artificial Intelligence (LLMs, Prompting, Multi-Agent).
+- Gain deep insight and hands-on optimization practice with AWS services (Amazon CloudFront, Amazon Quick).
+- Share hands-on experience from Hackathons and the process of building real-world products.
+- Assess current market demands and personal value orientation.
 
 ### Speakers
 
-- **Jignesh Shah** – Director, Open Source Databases
-- **Erica Liu** – Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** – Assc. Specialist SA, Serverless Amazon Web Services
+- **Tinh Truong** - Shared the importance of Context in AI.
+- **Anh Pham** - Introduced Friendly AI Assistant with Amazon Quick.
+- **Thinh Nguyen** - Optimization and Security with Amazon CloudFront.
+- **Team VIB** - Shared their 36-hour journey at LotusHacks.
+- **Duc Dao** - Discussed the Non-Determinism of LLMs.
+- **Vy Lam** - Enterprise-Grade Multi-Agent Systems.
+- **Anh Hung** - Shared insights on market demand and personal direction.
 
 ### Key Highlights
 
-#### Identifying the drawbacks of legacy application architecture
+#### 1. Context Is Everything & Prompting Mindset (Tinh Truong & Anh Hung)
+- To create personal value in the market, one must know how to use AI effectively. AI fails without context.
+- Introduced the concept of the **Second AI Brain** (using the Obsidian tool).
+- **Principles for writing standard prompts:**
+  - Only feed the AI the context it actually needs; do not supply redundant information it already knows, and do not randomly compile everything on the Internet into the prompt.
+  - Do not over-describe the obvious. Instead, explicitly specify **what problem to solve next**.
 
-- Long product release cycles → Lost revenue/missed opportunities  
-- Inefficient operations → Reduced productivity, higher costs  
-- Non-compliance with security regulations → Security breaches, loss of reputation  
+#### 2. Friendly AI Assistant with Amazon Quick (Anh Pham)
+- AWS provides a platform connecting the ecosystem for users to build their own products.
+- Outstanding features: **Quick Chat Agent** (explore data, analyze insights), **Quick Flows** (create smart workflows using natural language - no coding), **Quick Spaces** (team workspace), **Quick Sight** (create dashboards from raw data).
+- **Real-world Demo:** Using AI to analyze insights from an Excel file; creating an Agent to automatically summarize meeting notes and email them to everyone.
 
-#### Transitioning to modern application architecture – Microservices
+#### 3. Amazon CloudFront as Your Foundation (Thinh Nguyen)
+- Diverse target audience from small website owners to large enterprises with a new pricing mechanism (easy to estimate, fixed-price CDN).
+- **Security Capabilities:** Support for HTTPS, Mutual TLS, Origin Cloaking (creating a VPC tunnel from CloudFront to Origin), Viewer access control (geo-blocking), Content protection with Signed URLs (preventing copy-pasting links).
+- **Architecture & Performance:** Multi-layer caching, HTTP/3 (QUIC/UDP) multiplexing, maintaining persistent connections to origins to avoid repetitive TCP handshakes.
+- Intelligent routing capabilities with **CloudFront Functions**.
 
-Migrating to a modular system — each function is an **independent service** communicating via **events**, built on three core pillars:
+#### 4. The 36-Hour Journey at LotusHacks (Team VIB)
+- The process from "Zero to Idea", brainstorming, and defining the problem to build the **UTMorpho** application within 36 hours of continuous development.
+- App demo allowing direct interaction with components to edit via 3 AI agents, with the ability to review modification history.
 
-- **Queue Management**: Handle asynchronous tasks  
-- **Caching Strategy**: Optimize performance  
-- **Message Handling**: Flexible inter-service communication  
+#### 5. The "Non-Determinism" Nature of LLMs (Duc Dao)
+- The mechanism of an LLM is to rank scores for words in the prompt to select the most appropriate word from its vocabulary.
+- **Reality:** Many mistakenly believe that setting `Temperature = 0` guarantees determinism. However, current LLM providers employ inference optimization methods to optimize costs (plan pricing), meaning the output can still vary.
 
-#### Domain-Driven Design (DDD)
+#### 6. Enterprise-Grade Multi-Agent System (Vy Lam)
+- **Case Study:** Startup Credit Scoring. The challenge lies in startup data not matching traditional banking structures.
+- **Multi-Agent Model:** Acts as a virtual board of experts with specialized roles: Financial analyst, Market analyst, Team evaluator, Risk assessor, Compliance.
+- **Why this architecture works effectively:** Specialized expertise, checks & balances, parallel processing, auditability, scalability, and fault tolerance. The system must ensure security, reliability, and compliance (Guardrails & Compliance).
 
-- **Four-step method**: Identify domain events → arrange timeline → identify actors → define bounded contexts  
-- **Bookstore case study**: Demonstrates real-world DDD application  
-- **Context mapping**: 7 patterns for integrating bounded contexts  
+### Key Takeaways & Application
 
-#### Event-Driven Architecture
+- **Reshaping communication mindset with AI:** Recognizing the power of "Context". In my daily work, I will apply the principle of providing just enough context, avoiding information noise, and building a "Second AI Brain" to store and systemize personal knowledge intelligently.
+- **Optimizing AWS network infrastructure:** Grasping the advanced security features of CloudFront (Origin Cloaking, Signed URLs) and persistent connection mechanisms. This is highly useful for designing secure and faster web architectures.
+- **Advanced AI system design:** Clearly acknowledging the limitations of a Single Agent and understanding how to design a Multi-Agent model to solve complex problems requiring checks and balances, especially in strict enterprise workflows.
+- **Deeper understanding of LLMs:** Understanding the non-deterministic nature of LLMs even when `Temperature = 0`, allowing for appropriate error handling (mitigation strategies) when integrating AI into practical applications.
 
-- **3 integration patterns**: Publish/Subscribe, Point-to-point, Streaming  
-- **Benefits**: Loose coupling, scalability, resilience  
-- **Sync vs async comparison**: Understanding the trade-offs  
+#### Event Photos
+![Event check-in](/images/4-EventParticipated/checkin1.png)
+*Event check-in proof*
 
-#### Compute Evolution
+![Presentation photo](/images/4-EventParticipated/event1.jpg)
+*Speaker Duc Dao presenting on the Non-Determinism of LLMs*
 
-- **Shared Responsibility Model**: EC2 → ECS → Fargate → Lambda  
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value  
-- **Functions vs Containers**: Criteria for appropriate choice  
-
-#### Amazon Q Developer
-
-- **SDLC automation**: From planning to maintenance  
-- **Code transformation**: Java upgrade, .NET modernization  
-- **AWS Transform agents**: VMware, Mainframe, .NET migration  
-
-### Key Takeaways
-
-#### Design Mindset
-
-- **Business-first approach**: Always start from the business domain, not the technology  
-- **Ubiquitous language**: Importance of a shared vocabulary between business and tech teams  
-- **Bounded contexts**: Identifying and managing complexity in large systems  
-
-#### Technical Architecture
-
-- **Event storming technique**: Practical method for modeling business processes  
-- Use **event-driven communication** instead of synchronous calls  
-- **Integration patterns**: When to use sync, async, pub/sub, streaming  
-- **Compute spectrum**: Criteria for choosing between VM, containers, and serverless  
-
-#### Modernization Strategy
-
-- **Phased approach**: No rushing — follow a clear roadmap  
-- **7Rs framework**: Multiple modernization paths depending on the application  
-- **ROI measurement**: Cost reduction + business agility  
-
-### Applying to Work
-
-- **Apply DDD** to current projects: Event storming sessions with business teams  
-- **Refactor microservices**: Use bounded contexts to define service boundaries  
-- **Implement event-driven patterns**: Replace some sync calls with async messaging  
-- **Adopt serverless**: Pilot AWS Lambda for suitable use cases  
-- **Try Amazon Q Developer**: Integrate into the dev workflow to boost productivity  
-
-### Event Experience
-
-Attending the **“GenAI-powered App-DB Modernization”** workshop was extremely valuable, giving me a comprehensive view of modernizing applications and databases using advanced methods and tools. Key experiences included:
-
-#### Learning from highly skilled speakers
-- Experts from AWS and major tech organizations shared **best practices** in modern application design.  
-- Through real-world case studies, I gained a deeper understanding of applying **DDD** and **Event-Driven Architecture** to large projects.  
-
-#### Hands-on technical exposure
-- Participating in **event storming** sessions helped me visualize how to **model business processes** into domain events.  
-- Learned how to **split microservices** and define **bounded contexts** to manage large-system complexity.  
-- Understood trade-offs between **synchronous and asynchronous communication** and integration patterns like **pub/sub, point-to-point, streaming**.  
-
-#### Leveraging modern tools
-- Explored **Amazon Q Developer**, an AI tool for SDLC support from planning to maintenance.  
-- Learned to **automate code transformation** and pilot serverless with **AWS Lambda** to improve productivity.  
-
-#### Networking and discussions
-- The workshop offered opportunities to exchange ideas with experts, peers, and business teams, enhancing the **ubiquitous language** between business and tech.  
-- Real-world examples reinforced the importance of the **business-first approach** rather than focusing solely on technology.  
-
-#### Lessons learned
-- Applying DDD and event-driven patterns reduces **coupling** while improving **scalability** and **resilience**.  
-- Modernization requires a **phased approach** with **ROI measurement**; rushing the process can be risky.  
-- AI tools like Amazon Q Developer can significantly **boost productivity** when integrated into the current workflow.  
-
-#### Some event photos
-*Add your event photos here*  
-
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
+> Attending FCAJ Community Day not only brought me the latest technology updates on AWS and GenAI but also provided practical insights from enterprise problem-solving, helping me better orient my future professional development path.

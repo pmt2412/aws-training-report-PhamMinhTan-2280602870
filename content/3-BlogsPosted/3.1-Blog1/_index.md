@@ -1,29 +1,39 @@
 ---
 title: "Blog 1"
-date: 2024-01-01
+date: 2026-06-19
 weight: 1
 chapter: false
 pre: " <b> 3.1. </b> "
 ---
 
+# SECURELY PROVIDING DATABASE CREDENTIALS TO LAMBDA FUNCTIONS USING AWS SECRETS MANAGER
 
-# SESSION POLICIES IN AMAZON EKS POD IDENTITY
+Using AWS Secrets Manager allows you to secure database credentials and pass them to AWS Lambda functions when connecting to Amazon RDS (MySQL). This solution eliminates the need to hardcode passwords in source code or pass them via environment variables, thereby protecting the backend database more securely. Additionally, the automatic periodic password rotation feature helps minimize security risks.
 
-Amazon EKS Pod Identity has recently added the session policies feature, allowing you to narrow IAM permissions flexibly and precisely for each pod without needing to create many separate IAM roles. This is an important step forward that helps apply the principle of least privilege more effectively in large-scale Kubernetes environments.
+The operational model of the solution includes
 
-Key points to know:
+* The client sends a Request to a RESTful API hosted on AWS API Gateway.
+* API Gateway executes the corresponding AWS Lambda function.
+* The Lambda function calls the AWS Secrets Manager API to retrieve database login information (username/password).
+* The Lambda function uses that information to connect, query the Amazon RDS (MySQL) database, and return the results.
 
-* A session policy is an inline IAM policy specified when creating or updating a Pod Identity association.
-* Effective permissions = intersection between the IAM role permissions and the session policy → the session policy can only narrow permissions, not expand them.
-* Helps avoid over-permissioning when reusing a single IAM role for multiple workloads with different needs.
-* Supports both same-account and cross-account (via IAM role chaining).
-* Significantly reduces the number of IAM roles that need to be managed, helping avoid hitting IAM quota limits in large clusters.
-* Easily configured through the AWS Management Console, AWS CLI, or AWS SDK when creating an association between a Kubernetes ServiceAccount and an IAM role.
+Deployment process via CloudFormation:
 
-This feature is especially useful when you have many applications running on the same IAM role but need different permission restrictions (for example: one pod only reads a specific S3 bucket, another pod only calls certain APIs).
+An AWS CloudFormation template is used to automate the provisioning of:
 
-...Image...
+* An RDS MySQL database (db.t3.micro instance type).
+* Two Lambda functions: One (LambdaRDSCFNInit) to create an Employees table and insert sample data immediately after stack creation; another (LambdaRDSTest) to query the employee count.
+* A RESTful API Gateway with a GET method.
+* A Secret resource in Secrets Manager with a randomly generated password.
 
-...Link...
+Key technical points:
 
-...Guide...
+* **Dynamic References:** CloudFormation uses dynamic references to retrieve the password from Secrets Manager when creating the RDS instance. This ensures CloudFormation does not log or store the password in plain text.
+* **Automatic Rotation:** The AWS SecretsManager RotationSchedule resource is configured in coordination with a rotation Lambda function to automatically change the RDS database password every 30 days.
+
+Combining Lambda with AWS Secrets Manager helps automatically manage the lifecycle of sensitive information, reduces the operational cost of dedicated security infrastructure, and significantly enhances the security of Serverless applications.
+
+![Image](/images/3-BlogsPosted/blog1.1.jpg)
+
+- **Post Link:** [AWS Study Group Facebook Post](https://www.facebook.com/groups/awsstudygroupfcj/posts/2187144322050528)
+- **Blog Link:** [How to securely provide database credentials to Lambda functions by using AWS Secrets Manager](https://aws.amazon.com/vi/blogs/security/how-to-securely-provide-database-credentials-to-lambda-functions-by-using-aws-secrets-manager/?fbclid=IwY2xjawS3AUNleHRuA2FlbQIxMABicmlkETFWanVNbWhjdjRGR0g4NEFxc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHu4APzf301MYy7P9_61k2xiY8s_uPcppPQp_j0D1ebu-DsVcDHbhTa6vYkDd_aem_n-kVGqUxYdH_v_p1Btu0RA)

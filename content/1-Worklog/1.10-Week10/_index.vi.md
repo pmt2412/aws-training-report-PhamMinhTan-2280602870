@@ -1,56 +1,35 @@
 ---
 title: "Worklog Tuần 10"
-date: 2024-01-01
-weight: 2
+date: 2026-06-22
+weight: 10
 chapter: false
 pre: " <b> 1.10. </b> "
 ---
 
-
 ### Mục tiêu tuần 10:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thiết lập hệ thống bảo mật thông tin cấu hình và quản lý danh tính người dùng.
+* Xây dựng hạ tầng xử lý thông điệp bất đồng bộ và hệ thống giám sát, cảnh báo tự động trên AWS.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 2 | - **Bảo mật cấu hình:** Thiết lập quản lý bảo mật thông tin cấu hình (secrets) bằng AWS Systems Manager (SSM) Parameter Store. | 22/06/2026 | 22/06/2026 |
+| 3 | - **Xác thực người dùng:** Triển khai và cấu hình hệ thống xác thực và quản lý danh tính người dùng sử dụng AWS Cognito. | 23/06/2026 | 23/06/2026 |
+| 4 | - **Giao tiếp Service:** Xây dựng hệ thống xử lý thông điệp bất đồng bộ giữa các service với Amazon SQS (bao gồm thiết lập Dead-Letter Queue). | 24/06/2026 | 24/06/2026 |
+| 5 | - **Hệ thống thông báo:** Cấu hình hệ thống thông báo sự kiện và cảnh báo qua email sử dụng Amazon SNS Topic. | 25/06/2026 | 25/06/2026 |
+| 6 | - **Giám sát tài nguyên:** Cấu hình hệ thống giám sát tài nguyên với Amazon CloudWatch (Alarms). <br>- **Viết bài blog:** <br>&emsp;+ "VPC Link trong tích hợp riêng tư (Private Integrations) của Amazon API Gateway" | 26/06/2026 | 26/06/2026 |
 
 ### Kết quả đạt được tuần 10:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Về bảo mật và xác thực:**
+    * Đã thiết lập thành công AWS SSM Parameter Store để lưu trữ và quản lý an toàn các thông tin cấu hình nhạy cảm.
+    * Triển khai hoàn thiện AWS Cognito, thiết lập thành công luồng xác thực và quản lý danh tính cho người dùng của hệ thống.
+* **Về xử lý thông điệp bất đồng bộ:**
+    * Xây dựng thành công hàng đợi Amazon SQS giúp các microservices giao tiếp bất đồng bộ, đi kèm với Dead-Letter Queue để xử lý các message bị lỗi.
+* **Về giám sát và cảnh báo:**
+    * Cấu hình thành công Amazon SNS Topic để gửi các thông báo sự kiện và cảnh báo quan trọng qua email.
+    * Tích hợp thành công Amazon CloudWatch Alarms để tự động giám sát sức khỏe của các tài nguyên hệ thống và kích hoạt thông báo khi cần.
+* **Về hoạt động viết blog:**
+    * Hoàn thành viết và đăng tải bài blog: *"VPC Link trong tích hợp riêng tư (Private Integrations) của Amazon API Gateway"*.

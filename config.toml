@@ -1,6 +1,6 @@
 baseURL = "https://pmt2412.github.io/aws-training-report-PhamMinhTan-2280602870/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "en"
 
 # Change the default theme to be use when building the site with Hugo

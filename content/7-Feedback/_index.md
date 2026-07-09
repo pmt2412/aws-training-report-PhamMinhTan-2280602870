@@ -1,12 +1,10 @@
 ---
 title: "Sharing and Feedback"
-date: 2024-01-01
+date: 2026-07-09
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-
-
 
 > Here, you can freely share your personal opinions about your experience participating in the First Cloud AI Journey program. This will help the FCAJ team improve any shortcomings based on the following aspects:
 
@@ -30,16 +28,20 @@ The company culture is very positive: everyone respects each other, works seriou
 **6. Internship Policies / Benefits**  
 The company provides an internship allowance and offers flexible working hours when needed. In addition, having the opportunity to join internal training sessions is a big plus.
 
----
 
 ### Additional Questions
 - What did you find **most satisfying** during your internship?  
+  *Having direct hands-on experience with advanced AWS cloud technologies (ECS, RDS, Cognito, Bedrock, Secrets Manager...) through the real-world SaaS HR Multi-Tenant Microservices project rather than just studying theory. Furthermore, the strong team synergy and dedicated guidance from mentors and the FCAJ community during community gatherings like FCAJ Community Day were highly valuable to me.*
 - What do you think the company **should improve** for future interns?  
+  *The program is already outstanding. However, if FCAJ could provide dedicated AWS sandbox accounts or test credits for interns to freely experiment with paid AWS services without worrying about budget limits, the learning experience would be even more exceptional.*
 - If recommending to a friend, would you **suggest they intern here**? Why or why not?  
+  *Absolutely yes. This is an ideal environment for anyone wanting to pursue careers in Cloud (AWS) and AI. You not only work on real-world systems and write tech blogs, but you also have great opportunities to network with industry experts through community days.*
 
----
 
 ### Suggestions & Expectations
 - Do you have any suggestions to improve the internship experience?  
+  *Organize short internal mini-hackathons so that intern teams can collaborate, brainstorm, and build new GenAI solutions together.*
 - Would you like to continue this program in the future?  
-- Any other comments (free sharing):
+  *Yes, I would love to continue participating in the FCAJ program in the future as a contributor or supporting the next generations of interns.*
+- Any other comments (free sharing):  
+  *Sincere thanks to the First Cloud AI Journey organizers and mentors for creating such a high-quality learning platform. I hope the program continues to grow and empower more students.*

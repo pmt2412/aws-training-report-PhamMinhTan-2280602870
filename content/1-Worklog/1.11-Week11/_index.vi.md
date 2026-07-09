@@ -1,7 +1,7 @@
 ---
 title: "Worklog Tuần 11"
-date: 2024-01-01
-weight: 2
+date: 2026-06-29
+weight: 11
 chapter: false
 pre: " <b> 1.11. </b> "
 ---
@@ -9,48 +9,24 @@ pre: " <b> 1.11. </b> "
 
 ### Mục tiêu tuần 11:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Rà soát, kiểm tra và hoàn thiện các lỗi còn tồn đọng của dự án.
+* Khởi tạo cấu trúc trang web báo cáo thực tập và bắt đầu soạn thảo nội dung báo cáo.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 2 | - **Kiểm tra dự án:** Tiến hành rà soát toàn bộ các chức năng của hệ thống và kiểm tra tính ổn định của ứng dụng. | 29/06/2026 | 29/06/2026 |
+| 3 | - **Tối ưu hóa và sửa lỗi:** Khắc phục các lỗi nhỏ phát hiện trong quá trình kiểm tra và tinh chỉnh lại một số cấu hình hệ thống. | 30/06/2026 | 30/06/2026 |
+| 4 | - **Khởi tạo trang báo cáo thực tập:** Cấu trúc dự án Hugo cho trang báo cáo, cấu hình tệp tin `config.toml` và thiết lập giao diện tài liệu. | 01/07/2026 | 01/07/2026 |
+| 5 | - **Soạn thảo Bản đề xuất (Proposal):** Tổng hợp thông tin và viết nội dung giới thiệu tổng quan dự án cho chương 2. | 02/07/2026 | 02/07/2026 |
+| 6 | - **Tổng hợp nhật ký công việc (Worklogs):** Tiến hành viết và cập nhật nội dung nhật ký công việc các tuần đầu vào trang báo cáo thực tập. | 03/07/2026 | 03/07/2026 |
 
 ### Kết quả đạt được tuần 11:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Về dự án:**
+  * Hoàn thành rà soát và kiểm tra toàn bộ ứng dụng, hệ thống hoạt động ổn định và không còn lỗi lớn tồn đọng.
+  * Tinh chỉnh thành công một số cấu hình dự án để đảm bảo hiệu năng và tính ổn định.
+* **Về xây dựng trang báo cáo thực tập:**
+  * Khởi tạo thành công trang web báo cáo thực tập sử dụng Hugo.
+  * Hoàn thành nội dung giới thiệu tổng quan, bản đề xuất dự án (chương 2) và cập nhật thông tin nhật ký công việc cho các tuần đầu tiên.

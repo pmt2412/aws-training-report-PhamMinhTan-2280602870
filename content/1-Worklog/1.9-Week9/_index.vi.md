@@ -1,56 +1,37 @@
 ---
 title: "Worklog Tuần 9"
-date: 2024-01-01
-weight: 1
+date: 2026-06-15
+weight: 9
 chapter: false
 pre: " <b> 1.9. </b> "
 ---
 
-
 ### Mục tiêu tuần 9:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Thống nhất toàn bộ tài liệu và sơ đồ kiến trúc cho dự án SaaS HR Multi-Tenant.
+* Tính toán chi phí, thiết lập cảnh báo ngân sách và cấu hình lại hạ tầng cơ sở dữ liệu.
 
 ### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành |
+| --- | --- | --- | --- |
+| 2 | - **Thiết kế hệ thống:** Cập nhật và thống nhất tài liệu thiết kế kiến trúc dự án (SaaS HR Multi-Tenant). | 15/06/2026 | 15/06/2026 |
+| 3 | - **Thiết kế hệ thống:** Hoàn thiện bản vẽ sơ đồ kiến trúc AWS. | 16/06/2026 | 16/06/2026 |
+| 4 | - **Quản lý chi phí:** Tính toán chi phí ước tính cho các tài nguyên AWS của dự án. | 17/06/2026 | 17/06/2026 |
+| 5 | - **Quản lý chi phí:** Thiết lập cảnh báo ngân sách (Budget Alerts) để kiểm soát chi tiêu. | 18/06/2026 | 18/06/2026 |
+| 6 | - **Hạ tầng AWS:** Chỉnh sửa cấu hình hạ tầng Database RDS (MySQL). <br>- **Viết bài blog:** "Cung cấp thông tin xác thực cơ sở dữ liệu bảo mật cho các hàm Lambda bằng AWS Secrets Manager" | 19/06/2026 | 19/06/2026 |
+| 7 | - **Viết bài blog:** "Giải pháp giám sát hạ tầng chủ động sử dụng Ambient Agents trên Amazon Bedrock" | 20/06/2026 | 20/06/2026 |
 
 ### Kết quả đạt được tuần 9:
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+* **Về thiết kế và tài liệu:**
+    * Đã cập nhật và thống nhất thành công tài liệu thiết kế kiến trúc cốt lõi cho mô hình SaaS HR Multi-Tenant.
+    * Hoàn thiện chi tiết bản vẽ sơ đồ kiến trúc hệ thống trên AWS, làm cơ sở vững chắc cho các bước triển khai tiếp theo.
+* **Về quản lý ngân sách:**
+    * Hoàn thành bảng tính toán chi phí ước tính hàng tháng cho toàn bộ hạ tầng.
+    * Đã cấu hình thành công các cảnh báo ngân sách tự động trên AWS để đảm bảo dự án không vượt quá mức chi tiêu cho phép.
+* **Về hạ tầng cơ sở dữ liệu:**
+    * Thực hiện chỉnh sửa và tối ưu hóa thành công cấu hình hạ tầng Database RDS (MySQL) để phù hợp với kiến trúc mới.
+* **Về hoạt động viết blog:**
+    * Hoàn thành viết và đăng tải bài blog: *"Cung cấp thông tin xác thực cơ sở dữ liệu bảo mật cho các hàm Lambda bằng AWS Secrets Manager"*.
+    * Hoàn thành viết và đăng tải bài blog: *"Giải pháp giám sát hạ tầng chủ động sử dụng Ambient Agents trên Amazon Bedrock"*.

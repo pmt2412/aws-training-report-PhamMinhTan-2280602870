@@ -1,55 +1,35 @@
 ---
 title: "Week 4 Worklog"
-date: 2024-01-01
-weight: 1
+date: 2026-05-11
+weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
 ---
 
-
-
 ### Week 4 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Complete practical labs regarding AWS CLI, data migration (DMS, SCT), VM Import/Export, and cost optimization with Lambda.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date | Reference Material |
+| --- | --- | --- | --- | --- |
+| Mon | - **Practice Lab 000011:** <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Install AWS CLI <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Check resources via CLI <br> &nbsp;&nbsp;&nbsp;&nbsp;+ AWS CLI with Amazon S3 <br> &nbsp;&nbsp;&nbsp;&nbsp;+ AWS CLI with Amazon SNS <br> &nbsp;&nbsp;&nbsp;&nbsp;+ AWS CLI with IAM <br> &nbsp;&nbsp;&nbsp;&nbsp;+ AWS CLI with VPC <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Create EC2 using AWS CLI <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Troubleshooting | 11/05/2026 | 11/05/2026 | [000011 - AWS CLI](https://000011.awsstudygroup.com/) |
+| Tue | - **Practice Lab 000014:** <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Import VM into AWS <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Export EC2 Instance from AWS | 12/05/2026 | 12/05/2026 | [000014 - VM Import/Export](https://000014.awsstudygroup.com/) |
+| Wed | - **Practice Lab 000043:** <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Select your DMS source <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Select target DB for DMS <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Serverless replication <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Monitor DMS Migrations <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Troubleshoot AWS DMS | 13/05/2026 | 14/05/2026 | [000043 - DMS & SCT](https://000043.awsstudygroup.com/) |
+| Fri | - **Practice Lab 000022:** <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Create Tag for Instance <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Create Role for Lambda <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Create Lambda Function <br> &nbsp;&nbsp;&nbsp;&nbsp;+ Check results | 15/05/2026 | 16/05/2026 | [000022 - EC2 Cost Opt](https://000022.awsstudygroup.com/) |
 
 ### Week 4 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **For Lab 000011 (AWS CLI):**
+    * Learned how to install and configure AWS CLI with specific profiles.
+    * Gained knowledge on interacting with services like S3, IAM, VPC, and EC2 via command line.
+* **For Lab 000014 (VM Import/Export):**
+    * Explored the process of migrating virtual machines (VM) from on-premises to Amazon EC2.
+    * Learned how to use S3 as an intermediate storage for import/export tasks.
+* **For Lab 000043 (DMS & SCT):**
+    * Learned how to use AWS Schema Conversion Tool (SCT) for database schema conversion.
+    * Got familiar with AWS Database Migration Service (DMS) for secure data migration with minimal downtime.
+* **For Lab 000022 (Cost Optimization with Lambda):**
+    * Learned how to create Lambda Functions to automate starting/stopping EC2 instances based on schedules.
+    * Explored Saving Plans as a method to optimize costs for 24/7 systems.

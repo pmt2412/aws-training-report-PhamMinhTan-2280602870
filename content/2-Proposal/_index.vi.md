@@ -1,105 +1,100 @@
 ---
 title: "Bản đề xuất"
-date: 2024-01-01
+date: 2026-07-08
 weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
 
-Tại phần này, bạn cần tóm tắt các nội dung trong workshop mà bạn **dự tính** sẽ làm.
+# SaaS HR Multi-Tenant Microservices
+## Giải pháp AWS Cloud hợp nhất cho quản lý nhân sự đa doanh nghiệp quy mô Enterprise
 
-# IoT Weather Platform for Lab Research  
-## Giải pháp AWS Serverless hợp nhất cho giám sát thời tiết thời gian thực  
+### 1. Tóm tắt điều hành
+SaaS HR Multi-Tenant Microservices là nền tảng quản lý nhân sự đa doanh nghiệp (SaaS) quy mô Enterprise được thiết kế nhằm nâng cao hiệu quả quản trị nhân sự và tối ưu hóa chi phí vận hành cho các tổ chức. Hệ thống hỗ trợ tối đa hàng nghìn doanh nghiệp (tenants) hoạt động độc lập trên cùng một nền tảng nhờ mô hình phân tách dữ liệu logic nghiêm ngặt (Pool Model). Giải pháp tận dụng các dịch vụ Cloud của AWS (ECS Fargate, RDS MySQL, SQS, Cognito) kết hợp xác thực bất đối xứng qua Nginx API Gateway để cung cấp trải nghiệm giám sát sức khỏe hệ thống, quản lý nhân viên, chấm công và nghỉ phép theo thời gian thực một cách bảo mật, an toàn và tiết kiệm chi phí.
 
-### 1. Tóm tắt điều hành  
-IoT Weather Platform được thiết kế dành cho nhóm *ITea Lab* tại TP. Hồ Chí Minh nhằm nâng cao khả năng thu thập và phân tích dữ liệu thời tiết. Nền tảng hỗ trợ tối đa 5 trạm thời tiết, có khả năng mở rộng lên 10–15 trạm, sử dụng thiết bị biên Raspberry Pi kết hợp cảm biến ESP32 để truyền dữ liệu qua MQTT. Nền tảng tận dụng các dịch vụ AWS Serverless để cung cấp giám sát thời gian thực, phân tích dự đoán và tiết kiệm chi phí, với quyền truy cập giới hạn cho 5 thành viên phòng lab thông qua Amazon Cognito.  
+### 2. Tuyên bố vấn đề
+*Vấn đề hiện tại*
+Các hệ thống quản lý nhân sự truyền thống thường được triển khai riêng lẻ cho từng công ty, dẫn đến lãng phí tài nguyên máy chủ và tốn nhiều công sức bảo trì. Đối với các giải pháp dùng chung (multi-tenant), thách thức lớn nhất là đảm bảo cô lập dữ liệu tuyệt đối giữa các doanh nghiệp khách hàng (ngăn ngừa rò rỉ thông tin chéo) mà vẫn duy trì hiệu năng cao khi lượng truy cập tăng đột biến, đồng thời kiểm soát tốt chi phí hạ tầng.
 
-### 2. Tuyên bố vấn đề  
-*Vấn đề hiện tại*  
-Các trạm thời tiết hiện tại yêu cầu thu thập dữ liệu thủ công, khó quản lý khi có nhiều trạm. Không có hệ thống tập trung cho dữ liệu hoặc phân tích thời gian thực, và các nền tảng bên thứ ba thường tốn kém và quá phức tạp.  
+*Giải pháp*
+Dự án phát triển hệ thống SaaS HR Multi-Tenant trên kiến trúc Microservices phân rã thành 3 dịch vụ cốt lõi: `auth-service` (xác thực), `tenant-service` (quản lý doanh nghiệp) và `hr-service` (nghiệp vụ nhân sự). Hệ thống thực thi phân tách dữ liệu logic (Pool Model) trên 3 cơ sở dữ liệu độc lập của RDS MySQL (`auth_db`, `tenant_db`, `hr_db`). Sử dụng Amazon Cognito làm nhà cung cấp danh tính tập trung phối hợp ký mã token JWT RS256, cho phép các dịch vụ tự xác thực token không trạng thái (stateless) cực kỳ nhanh chóng. Giao diện frontend ReactJS (Vite) được lưu trữ trên S3 và phân phối qua CloudFront CDN toàn cầu. Sự kiện bất đồng bộ giữa các dịch vụ được tách biệt qua Amazon SQS để đảm bảo hệ thống không bị nghẽn mạch.
 
-*Giải pháp*  
-Nền tảng sử dụng AWS IoT Core để tiếp nhận dữ liệu MQTT, AWS Lambda và API Gateway để xử lý, Amazon S3 để lưu trữ (bao gồm data lake), và AWS Glue Crawlers cùng các tác vụ ETL để trích xuất, chuyển đổi, tải dữ liệu từ S3 data lake sang một S3 bucket khác để phân tích. AWS Amplify với Next.js cung cấp giao diện web, và Amazon Cognito đảm bảo quyền truy cập an toàn. Tương tự như Thingsboard và CoreIoT, người dùng có thể đăng ký thiết bị mới và quản lý kết nối, nhưng nền tảng này hoạt động ở quy mô nhỏ hơn và phục vụ mục đích sử dụng nội bộ. Các tính năng chính bao gồm bảng điều khiển thời gian thực, phân tích xu hướng và chi phí vận hành thấp.  
+*Lợi ích và hoàn vốn đầu tư (ROI)*
+- **Tối ưu chi phí hạ tầng**: Bằng cách gộp 3 database của các microservices vào cùng một instance RDS MySQL Multi-AZ và sử dụng ECS Fargate serverless, chi phí vận hành hạ tầng trên AWS ước tính tối ưu chỉ khoảng 115 - 155 USD/tháng (chạy 24/7), có thể tắt/hủy toàn bộ hạ tầng (destroy) khi không dùng để đưa chi phí về gần 0 USD.
+- **Tính sẵn sàng cao & Tự động sao lưu**: Hệ thống phân bổ đa vùng sẵn sàng (Multi-AZ) giúp giảm thiểu downtime, tự động phục hồi lỗi và hỗ trợ tự động backup dữ liệu định kỳ 7 ngày.
+- **Tiết kiệm thời gian triển khai**: Doanh nghiệp khách hàng mới có thể đăng ký sử dụng ngay lập tức thông qua subdomain riêng biệt mà không cần bất kỳ bước cài đặt hay cấu hình máy chủ vật lý nào. Thời gian hoàn vốn đầu tư cho hệ thống ước tính từ 3–6 tháng nhờ tối ưu hiệu quả làm việc của nhân sự và giảm chi phí vận hành IT.
 
-*Lợi ích và hoàn vốn đầu tư (ROI)*  
-Giải pháp tạo nền tảng cơ bản để các thành viên phòng lab phát triển một nền tảng IoT lớn hơn, đồng thời cung cấp nguồn dữ liệu cho những người nghiên cứu AI phục vụ huấn luyện mô hình hoặc phân tích. Nền tảng giảm bớt báo cáo thủ công cho từng trạm thông qua hệ thống tập trung, đơn giản hóa quản lý và bảo trì, đồng thời cải thiện độ tin cậy dữ liệu. Chi phí hàng tháng ước tính 0,66 USD (theo AWS Pricing Calculator), tổng cộng 7,92 USD cho 12 tháng. Tất cả thiết bị IoT đã được trang bị từ hệ thống trạm thời tiết hiện tại, không phát sinh chi phí phát triển thêm. Thời gian hoàn vốn 6–12 tháng nhờ tiết kiệm đáng kể thời gian thao tác thủ công.  
+### 3. Kiến trúc giải pháp
+Nền tảng áp dụng kiến trúc 3-tier kết hợp Microservices trên AWS để quản lý và vận hành ứng dụng. Toàn bộ các tài nguyên tính toán được triển khai bên trong một VPC trải trên 2 Availability Zone (AZ) nhằm tăng cường khả năng chịu lỗi.
 
-### 3. Kiến trúc giải pháp  
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.  
+![Sơ đồ kiến trúc AWS - SaaS HR Multi-Tenant](/images/2-Proposal/architecture.png)
 
-![IoT Weather Station Architecture](/images/2-Proposal/edge_architecture.jpeg)
+*Dịch vụ AWS sử dụng*
+- **Amazon CloudFront**: CDN phân phối frontend tĩnh và là điểm truy cập duy nhất cho toàn bộ hệ thống.
+- **Amazon S3**: Lưu trữ mã nguồn build tĩnh của ứng dụng ReactJS (truy cập bảo mật qua OAC).
+- **Application Load Balancer (ALB)**: Nhận traffic từ CloudFront để định tuyến các request `/api/v1/*` vào cụm ECS Fargate.
+- **Amazon ECS Fargate**: Chạy các container microservices (`auth`, `tenant`, `hr`) không trạng thái ở cả 2 AZ.
+- **Amazon RDS MySQL**: Hệ quản trị cơ sở dữ liệu Multi-AZ (Primary & Standby) chạy ở private subnets cách ly hoàn toàn với internet.
+- **Amazon SQS**: Quản lý hàng đợi tin nhắn phục vụ giao tiếp bất đồng bộ giữa `tenant-service` và `hr-service`.
+- **Amazon Cognito**: User Pools quản lý tài khoản người dùng và cấp phát JWT chứa định danh tenant ID.
+- **AWS NAT Gateway, Route 53, ACM, CloudWatch, SNS, SSM Parameter Store**.
 
-![IoT Weather Platform Architecture](/images/2-Proposal/platform_architecture.jpeg)
+*Thiết kế thành phần*
+- **Giao diện Client (Frontend)**: ReactJS (Vite) xử lý định tuyến phía client, tự động nhận diện tenant qua subdomain và lưu trữ token xác thực.
+- **Cổng API & Phân tải**: ALB định tuyến động tới các target groups tương ứng trong ECS. Security Groups thiết lập theo mô hình Zero-Trust chỉ cho phép ALB kết nối tới ECS Fargate, và ECS Fargate kết nối tới RDS MySQL.
+- **Tầng Dịch vụ & Xử lý nghiệp vụ**: Các microservices FastAPI xử lý logic độc lập. Token JWT được verify không trạng thái tại mỗi service thông qua khóa công khai (Public Key) nhận từ Cognito mà không cần gọi lại service xác thực.
+- **Tầng Cơ sở dữ liệu & Tách biệt**: Dữ liệu lưu trữ tập trung tại RDS MySQL. Bảng `employees` và `departments` thực thi phân tách logic qua trường dữ liệu bắt buộc `tenant_id` và được tối ưu hóa chỉ mục tìm kiếm nhằm tăng tốc độ truy vấn và cô lập dữ liệu.
 
-*Dịch vụ AWS sử dụng*  
-- *AWS IoT Core*: Tiếp nhận dữ liệu MQTT từ 5 trạm, mở rộng lên 15.  
-- *AWS Lambda*: Xử lý dữ liệu và kích hoạt Glue jobs (2 hàm).  
-- *Amazon API Gateway*: Giao tiếp với ứng dụng web.  
-- *Amazon S3*: Lưu trữ dữ liệu thô (data lake) và dữ liệu đã xử lý (2 bucket).  
-- *AWS Glue*: Crawlers lập chỉ mục dữ liệu, ETL jobs chuyển đổi và tải dữ liệu.  
-- *AWS Amplify*: Lưu trữ giao diện web Next.js.  
-- *Amazon Cognito*: Quản lý quyền truy cập cho người dùng phòng lab.  
+### 4. Triển khai kỹ thuật
+*Các giai đoạn triển khai*
+Dự án được triển khai song song giữa phần lập trình phát triển và thiết lập hạ tầng Cloud qua 4 giai đoạn chính:
+1. *Thiết kế hạ tầng mạng & Bảo mật*: Thiết lập VPC, phân chia 6 subnets cách ly cho 3 tầng (Public, App Private, Data Private). Cấu hình Route Table và Security Groups.
+2. *Phát triển mã nguồn local*: Lập trình 3 microservices FastAPI, xây dựng giao diện ReactJS, cài đặt Nginx làm API Gateway local và tích hợp cơ chế JWT RS256.
+3. *Tích hợp và kiểm định an toàn dữ liệu*: Thực hiện kiểm thử cô lập dữ liệu giữa các tenant, tích hợp hệ thống hàng đợi tin nhắn bất đồng bộ qua Redis/SQS.
+4. *Triển khai Cloud & Tối ưu hóa*: Đóng gói container Docker (multi-stage build), đẩy lên ECR, cấu hình và khởi chạy các dịch vụ trên AWS ECS Fargate, ALB, RDS Multi-AZ và Cognito, thiết lập hệ thống giám sát CloudWatch Logs.
 
-*Thiết kế thành phần*  
-- *Thiết bị biên*: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.  
-- *Tiếp nhận dữ liệu*: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.  
-- *Lưu trữ dữ liệu*: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.  
-- *Xử lý dữ liệu*: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.  
-- *Giao diện web*: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.  
-- *Quản lý người dùng*: Amazon Cognito giới hạn 5 tài khoản hoạt động.  
+*Yêu cầu kỹ thuật*
+- **Trạm máy ảo phát triển local**: Cài đặt Docker Desktop để khởi chạy đồng bộ MySQL, Nginx Gateway, và 3 microservices. Python 3.10+ cho các API dịch vụ và Node.js v18+ phục vụ React frontend.
+- **Nền tảng Cloud AWS**: Yêu cầu tài khoản AWS hoạt động với đầy đủ quyền khởi tạo VPC, ECS Fargate, RDS MySQL, Cognito User Pools, SQS, CloudFront, S3. Cần nắm vững kỹ thuật đóng gói Docker tối ưu và cơ chế truyền nhận khóa bất đối xứng RS256.
 
-### 4. Triển khai kỹ thuật  
-*Các giai đoạn triển khai*  
-Dự án gồm 2 phần — thiết lập trạm thời tiết biên và xây dựng nền tảng thời tiết — mỗi phần trải qua 4 giai đoạn:  
-1. *Nghiên cứu và vẽ kiến trúc*: Nghiên cứu Raspberry Pi với cảm biến ESP32 và thiết kế kiến trúc AWS Serverless (1 tháng trước kỳ thực tập).  
-2. *Tính toán chi phí và kiểm tra tính khả thi*: Sử dụng AWS Pricing Calculator để ước tính và điều chỉnh (Tháng 1).  
-3. *Điều chỉnh kiến trúc để tối ưu chi phí/giải pháp*: Tinh chỉnh (ví dụ tối ưu Lambda với Next.js) để đảm bảo hiệu quả (Tháng 2).  
-4. *Phát triển, kiểm thử, triển khai*: Lập trình Raspberry Pi, AWS services với CDK/SDK và ứng dụng Next.js, sau đó kiểm thử và đưa vào vận hành (Tháng 2–3).  
+### 5. Lộ trình & Mốc triển khai
+- **Sprint 1: Khởi tạo hạ tầng & Cài đặt API Gateway (Tuần 1)**: Cấu trúc thư mục dự án, chạy di chuyển cơ sở dữ liệu mẫu (Alembic). Thiết lập Nginx gateway local và khung React Vite cho login/dashboard.
+- **Sprint 2: Core Microservices & Liên kết DB (Tuần 2)**: Xây dựng hoàn chỉnh `auth-service` (xác thực RS256), `tenant-service` (quản lý gói đăng ký), và `hr-service` với các schema dữ liệu cốt lõi hỗ trợ cô lập logic bằng `tenant_id`.
+- **Sprint 3: Tích hợp Hệ thống & Định tuyến Subdomain (Tuần 3)**: Kết nối giao diện ReactJS với API Gateway, cấu hình Axios interceptor tự động đính kèm token, xử lý phân quyền người dùng và giao diện quản lý nhân sự trực quan.
+- **Sprint 4: Đóng gói Container, Bảo mật & Triển khai Cloud (Tuần 4)**: Đóng gói Docker production siêu nhẹ (multi-stage), quét bảo mật (Trivy), thiết lập hạ tầng AWS và kiểm thử hệ thống cuối cùng bằng một lệnh duy nhất.
 
-*Yêu cầu kỹ thuật*  
-- *Trạm thời tiết biên*: Cảm biến (nhiệt độ, độ ẩm, lượng mưa, tốc độ gió), vi điều khiển ESP32, Raspberry Pi làm thiết bị biên. Raspberry Pi chạy Raspbian, sử dụng Docker để lọc dữ liệu và gửi 1 MB/ngày/trạm qua MQTT qua Wi-Fi.  
-- *Nền tảng thời tiết*: Kiến thức thực tế về AWS Amplify (lưu trữ Next.js), Lambda (giảm thiểu do Next.js xử lý), AWS Glue (ETL), S3 (2 bucket), IoT Core (gateway và rules), và Cognito (5 người dùng). Sử dụng AWS CDK/SDK để lập trình (ví dụ IoT Core rules tới S3). Next.js giúp giảm tải Lambda cho ứng dụng web fullstack.  
+### 6. Ước tính ngân sách
+Bảng dự toán chi phí vận hành trên AWS (Vùng Singapore, chạy 24/7):
 
-### 5. Lộ trình & Mốc triển khai  
-- *Trước thực tập (Tháng 0)*: 1 tháng lên kế hoạch và đánh giá trạm cũ.  
-- *Thực tập (Tháng 1–3)*:  
-    - Tháng 1: Học AWS và nâng cấp phần cứng.  
-    - Tháng 2: Thiết kế và điều chỉnh kiến trúc.  
-    - Tháng 3: Triển khai, kiểm thử, đưa vào sử dụng.  
-- *Sau triển khai*: Nghiên cứu thêm trong vòng 1 năm.  
+| Dịch vụ AWS | Cấu hình đề xuất | Ước tính / Tháng |
+| :--- | :--- | :---: |
+| **NAT Gateway** | 1 cổng NAT dùng chung ở public subnet | **$43 – $50** |
+| **RDS MySQL Multi-AZ** | Instance `db.t4g.micro` x2, 20 GB gp3 storage & backup | **$30 – $38** |
+| **Application Load Balancer** | 1 ALB phục vụ chia tải + ~1 LCU | **$22 – $26** |
+| **ECS Fargate** | 4–6 tasks chạy các dịch vụ (0.25 vCPU / 0.5 GB) | **$12 – $18** |
+| **Data Transfer / CloudWatch** | Logs lưu 7 ngày, NAT data transfer, inter-AZ | **$5 – $12** |
+| **Route 53 + CloudFront + S3 + ECR** | Tên miền, CDN, Hosting tĩnh React, Container registry | **$3 – $8** |
+| **Cognito / SQS / SNS / ACM** | Nằm trong định mức miễn phí (Free Tier) | **$0** |
+| **Tổng cộng / Tháng** | | **≈ $115 – $155 (~$130)** |
 
-### 6. Ước tính ngân sách  
-Có thể xem chi phí trên [AWS Pricing Calculator](https://calculator.aws/#/estimate?id=621f38b12a1ef026842ba2ddfe46ff936ed4ab01)  
-Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.pdf).  
+> [!NOTE]
+> Để tối ưu hóa chi phí học tập và thử nghiệm, toàn bộ tài nguyên có thể được tạo và dọn dẹp (destroy) nhanh chóng bằng script CDK/Terraform khi không chạy demo.
 
-*Chi phí hạ tầng*  
-- AWS Lambda: 0,00 USD/tháng (1.000 request, 512 MB lưu trữ).  
-- S3 Standard: 0,15 USD/tháng (6 GB, 2.100 request, 1 GB quét).  
-- Truyền dữ liệu: 0,02 USD/tháng (1 GB vào, 1 GB ra).  
-- AWS Amplify: 0,35 USD/tháng (256 MB, request 500 ms).  
-- Amazon API Gateway: 0,01 USD/tháng (2.000 request).  
-- AWS Glue ETL Jobs: 0,02 USD/tháng (2 DPU).  
-- AWS Glue Crawlers: 0,07 USD/tháng (1 crawler).  
-- MQTT (IoT Core): 0,08 USD/tháng (5 thiết bị, 45.000 tin nhắn).  
+### 7. Đánh giá rủi ro
+*Ma trận rủi ro*
+- **Rò rỉ dữ liệu chéo giữa các tenant**: Ảnh hưởng: Rất nghiêm trọng; Xác suất: Thấp.
+- **Quá tải API Gateway hoặc Microservice**: Ảnh hưởng: Cao; Xác suất: Trung bình.
+- **Vượt ngân sách AWS**: Ảnh hưởng: Trung bình; Xác suất: Trung bình.
 
-*Tổng*: 0,7 USD/tháng, 8,40 USD/12 tháng  
-- *Phần cứng*: 265 USD một lần (Raspberry Pi 5 và cảm biến).  
+*Chiến lược giảm thiểu*
+- **Ngăn rò rỉ dữ liệu**: Thiết lập cơ chế kiểm tra và tự động inject điều kiện `tenant_id` từ claims của token JWT đã verify vào mọi câu lệnh truy vấn database thông qua Dependency Injection trong FastAPI.
+- **Chống quá tải**: Cấu hình cơ chế tự động mở rộng (Auto Scaling) của ECS Fargate dựa trên CPU/Memory và phân tách tải bất đồng bộ qua hàng đợi SQS cho các luồng xử lý nặng.
+- **Quản lý chi phí**: Kích hoạt AWS Budgets cảnh báo qua email (SNS) khi chi phí dự kiến vượt quá 100 USD hoặc 130 USD.
 
-### 7. Đánh giá rủi ro  
-*Ma trận rủi ro*  
-- Mất mạng: Ảnh hưởng trung bình, xác suất trung bình.  
-- Hỏng cảm biến: Ảnh hưởng cao, xác suất thấp.  
-- Vượt ngân sách: Ảnh hưởng trung bình, xác suất thấp.  
+*Kế hoạch dự phòng*
+- Sử dụng công cụ tự động dọn dẹp các tài nguyên không sử dụng trên AWS (Orphaned volumes, unused NAT gateways, stale Elastic IPs).
+- Lưu trữ các bản backup dữ liệu RDS ở định dạng nén an toàn và tách biệt để phục hồi khi có sự cố thảm họa.
 
-*Chiến lược giảm thiểu*  
-- Mạng: Lưu trữ cục bộ trên Raspberry Pi với Docker.  
-- Cảm biến: Kiểm tra định kỳ, dự phòng linh kiện.  
-- Chi phí: Cảnh báo ngân sách AWS, tối ưu dịch vụ.  
-
-*Kế hoạch dự phòng*  
-- Quay lại thu thập thủ công nếu AWS gặp sự cố.  
-- Sử dụng CloudFormation để khôi phục cấu hình liên quan đến chi phí.  
-
-### 8. Kết quả kỳ vọng  
-*Cải tiến kỹ thuật*: Dữ liệu và phân tích thời gian thực thay thế quy trình thủ công. Có thể mở rộng tới 10–15 trạm.  
-*Giá trị dài hạn*: Nền tảng dữ liệu 1 năm cho nghiên cứu AI, có thể tái sử dụng cho các dự án tương lai.
+### 8. Kết quả kỳ vọng
+- **Cải tiến kỹ thuật**: Hệ thống đa khách hàng chạy mượt mà, phân tách dữ liệu tuyệt đối giữa các doanh nghiệp, tự động định tuyến theo subdomain, xác thực bảo mật chuẩn Enterprise (RS256 JWT).
+- **Giá trị dài hạn**: Xây dựng được bộ tài liệu thiết kế và mã nguồn kiến trúc microservices mẫu chất lượng cao, dễ dàng tái sử dụng cho các dự án SaaS tiếp theo.

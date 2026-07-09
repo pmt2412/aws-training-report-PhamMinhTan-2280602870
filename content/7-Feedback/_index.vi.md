@@ -1,12 +1,10 @@
 ---
 title: "Chia sẻ, đóng góp ý kiến"
-date: 2024-01-01
+date: 2026-07-09
 weight: 7
 chapter: false
 pre: " <b> 7. </b> "
 ---
-
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
 
 ### Đánh giá chung
 
@@ -31,11 +29,17 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 ### Một số câu hỏi khác
 - Điều bạn **hài lòng nhất** trong thời gian thực tập?  
+  *Đó chính là việc được trực tiếp tiếp cận và thực hành trên các công nghệ Cloud tiên tiến của AWS (ECS, RDS, Cognito, Bedrock, Secrets Manager...) trong dự án thực tế SaaS HR Multi-Tenant Microservices, thay vì chỉ học lý thuyết suông. Ngoài ra, tinh thần làm việc nhóm gắn kết và sự chia sẻ tận tình từ các mentor cũng như cộng đồng FCAJ trong các sự kiện giao lưu như FCAJ Community Day là điều tôi vô cùng trân quý.*
 - Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
+  *Chương trình rất xuất sắc, tuy nhiên nếu có thể cung cấp thêm một số tài khoản AWS Lab hoặc hỗ trợ chi phí nhỏ để các thực tập sinh tự do thử nghiệm các dịch vụ AWS có phí mà không lo lắng về vấn đề vượt ngân sách thì trải nghiệm thực hành sẽ tuyệt vời hơn nữa.*
 - Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+  *Chắc chắn là có. Đây là một môi trường cực kỳ lý tưởng cho những ai muốn theo đuổi mảng Cloud (AWS) và AI. Bạn không chỉ được làm việc thực tế, tham gia viết các bài chia sẻ kiến thức (Blog) mà còn có cơ hội xây dựng mạng lưới quan hệ rất tốt với các chuyên gia trong ngành thông qua các buổi sinh hoạt cộng đồng.*
 
 
 ### Đề xuất & mong muốn
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
-- Bạn có muốn tiếp tục chương trình này trong tương lai?
-- Góp ý khác (tự do chia sẻ):
+  *Nên tổ chức thêm các buổi mini-hackathon nội bộ ngắn ngày để các đội nhóm thực tập sinh có cơ hội trực tiếp cọ xát và cùng nhau phát triển các ý tưởng GenAI mới.*
+- Bạn có muốn tiếp tục chương trình này trong tương lai?  
+  *Có, tôi rất mong muốn tiếp tục đồng hành cùng cộng đồng FCAJ với tư cách là một cộng tác viên hoặc hỗ trợ các bạn thực tập sinh khóa sau.*
+- Góp ý khác (tự do chia sẻ):  
+  *Xin gửi lời cảm ơn chân thành đến ban tổ chức First Cloud AI Journey và các anh chị mentor đã tạo ra một sân chơi và cơ hội học tập vô cùng chất lượng cho thế hệ sinh viên. Mong rằng chương trình sẽ ngày càng phát triển rộng rãi và hỗ trợ được nhiều bạn trẻ hơn nữa.*

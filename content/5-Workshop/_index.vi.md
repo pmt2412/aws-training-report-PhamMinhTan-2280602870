@@ -1,30 +1,31 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-08
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-
-
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# SaaS HR Multi-Tenant trên AWS
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+Một hệ SaaS quản lý nhân sự đa khách hàng (microservices FastAPI + React) triển khai trên AWS theo **kiến trúc 3 tầng**: CloudFront + S3 cho frontend, ECS Fargate sau Application Load Balancer cho API, và RDS MySQL Multi-AZ cho dữ liệu. Sự kiện bất đồng bộ dùng **Amazon SQS**, xác thực dùng **Amazon Cognito**, giám sát dùng **CloudWatch + SNS**. Xây thủ công trên AWS Console tại vùng `ap-southeast-1`.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Mỗi công ty khách hàng là một **tenant** riêng biệt — dữ liệu được cách ly theo từng tenant.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+> Workshop này dùng **hơn 3 dịch vụ AWS** (Cognito, SQS, RDS, ECS Fargate, ALB, S3, CloudFront, CloudWatch, SNS, SSM) và bao gồm: thiết kế kiến trúc, triển khai end-to-end, kiểm thử và dọn dẹp.
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Tổng quan & Kiến trúc](5.1-Overview/)
+2. [Chuẩn bị](5.2-Prerequisite/)
+3. [Mạng](5.3-Networking/)
+4. [Dữ liệu & Danh tính](5.4-Data-Identity/)
+5. [Hàng đợi bất đồng bộ (SQS)](5.5-Async-SQS/)
+6. [Tầng ứng dụng (ECS)](5.6-Compute-ECS/)
+7. [Frontend & CDN](5.7-Frontend-CDN/)
+8. [Giám sát & Cảnh báo](5.8-Monitoring/)
+9. [Kiểm thử & Xác thực](5.9-Testing/)
+10. [Bảo mật & IAM](5.10-Security-IAM/)
+11. [Dọn dẹp](5.11-Cleanup/)

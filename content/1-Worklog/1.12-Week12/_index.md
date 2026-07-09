@@ -1,55 +1,30 @@
 ---
 title: "Week 12 Worklog"
-date: 2024-01-01
-weight: 2
+date: 2026-07-06
+weight: 12
 chapter: false
 pre: " <b> 1.12. </b> "
 ---
 
 
-
 ### Week 12 Objectives:
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Collaborate with team members to draft and complete Chapter 3 (blogsPosted) and Chapter 5 (workshop).
+* Finalize all remaining personal tasks to compile and submit the final internship training report.
 
 ### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
 
+| Day | Task | Start Date | Completion Date |
+| --- | --- | --- | --- |
+| 2 | - **Team Collaboration for Chapter 3:** Work together with team members to compile and write the content for Chapter 3 (blogsPosted). | 07/06/2026 | 07/06/2026 |
+| 3 | - **Team Collaboration for Chapter 5:** Collaborate with the team to write and format Chapter 5 (workshop) exercises. | 07/07/2026 | 07/07/2026 |
+| 4 | - **Personal Tasks Finalization (Part 1):** Self-draft the personal self-evaluation (Self-assessment) and compile personal weekly worklogs from Week 6 to Week 10. | 07/08/2026 | 07/08/2026 |
+| 5 | - **Finalization, Review & Report Submission:** Write personal worklogs for Weeks 11 and 12, translate personal report sections into English, check Hugo site image links, and submit the final internship report. | 07/09/2026 | 07/09/2026 |
 
 ### Week 12 Achievements:
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
-
-* Successfully created and configured an AWS Free Tier account.
-
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
-
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
-
-* Used AWS CLI to perform basic operations such as:
-
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
-
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+* **Teamwork:**
+  * Successfully compiled and updated Chapter 3 (blogsPosted) and Chapter 5 (workshop) on the training report site.
+* **Personal Tasks:**
+  * Completed all remaining personal report sections including Self-assessment and weekly Worklogs in both English and Vietnamese.
+  * Thoroughly reviewed the overall structure and presentation of the training report website before the end of the internship.
