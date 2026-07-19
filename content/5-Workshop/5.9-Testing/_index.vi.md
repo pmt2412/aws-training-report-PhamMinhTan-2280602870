@@ -1,6 +1,6 @@
 ﻿---
-title: "Kiểm thử & Xác thực"
-date: 2026-07-08
+title: "Demo, Kiểm thử & Xác thực"
+date: 2024-07-08
 weight: 9
 chapter: false
 pre: " <b> 5.9. </b> "
@@ -9,8 +9,14 @@ pre: " <b> 5.9. </b> "
 Xác thực end-to-end stack đã triển khai qua cổng vào CloudFront, rồi kiểm thử lỗi, kiểm thử tính sẵn sàng cao, và quan sát (observability). Base URL:
 
 ```bash
-BASE="https://d3htvmot332c6v.cloudfront.net/"   
+BASE="https://d3rpqs3arfqpga.cloudfront.net/"   
 ```
+
+## Video demo giao diện
+
+- **<a href="https://drive.google.com/file/d/1Pth_vB6oUrJbP5H4CyFzAPaRKqfXgiKg/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Link video: Trải nghiệm giao diện — 2 tenant</a>** — 2 tab, mỗi tab một tài khoản của một tenant khác nhau, gồm dashboard, danh sách nhân viên, danh sách phòng ban, chấm công, gửi đơn nghỉ phép, thành viên trong tenant, và profile.
+- **<a href="https://drive.google.com/file/d/1s8N0P96T1q-wZqCyz3X2GLhFu-xDewvK/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Link video: Quản lý nhân viên & phòng ban</a>** — thêm/sửa/xóa nhân viên và sửa phòng ban.
+- **<a href="https://drive.google.com/file/d/1Klln4HYTXwtWXzIP3q97n1a1m8lFbWXT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🎥 Link video: Chấm công & duyệt nghỉ phép</a>** — luồng chấm công vào/ra và gửi đơn nghỉ phép để admin duyệt.
 
 ## 1. Health check (smoke test)
 
@@ -130,5 +136,4 @@ Kiểm thử end-to-end luồng bất đồng bộ (đổi status tenant → SQS
 ![Alarm email](../../../images/5-Workshop/5.9-Testing/alarm2.png)
 
 ![Alarm email](../../../images/5-Workshop/5.9-Testing/alarm3.png)
-
 

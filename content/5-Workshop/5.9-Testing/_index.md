@@ -1,6 +1,6 @@
 ---
-title: "Testing & Validation"
-date: 2026-07-08
+title: "Demo, Testing & Validation"
+date: 2024-07-08
 weight: 9
 chapter: false
 pre: " <b> 5.9. </b> "
@@ -9,8 +9,14 @@ pre: " <b> 5.9. </b> "
 End-to-end validation of the deployed stack via the CloudFront entry point, followed by error testing, high-availability testing, and observability. Base URL:
 
 ```bash
-BASE="https://d3htvmot332c6v.cloudfront.net/"   
+BASE="https://d3rpqs3arfqpga.cloudfront.net/"   
 ```
+
+## UI Demo videos
+
+- **<a href="https://drive.google.com/file/d/1Pth_vB6oUrJbP5H4CyFzAPaRKqfXgiKg/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Video link: UI walkthrough — 2 tenants</a>** — two tabs, one account per tenant, covering dashboard, employee list, department list, attendance check-in, leave request submission, tenant members, and profile.
+- **<a href="https://drive.google.com/file/d/1s8N0P96T1q-wZqCyz3X2GLhFu-xDewvK/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Video link: Employee & department management</a>** — create/edit/delete employees and edit departments.
+- **<a href="https://drive.google.com/file/d/1Klln4HYTXwtWXzIP3q97n1a1m8lFbWXT/view?usp=drive_link" target="_blank" rel="noopener noreferrer">🎥 Video link: Attendance & leave approval</a>** — check-in/check-out flow and leave request submission with admin approval.
 
 ## 1. Health checks (smoke test)
 
@@ -112,7 +118,6 @@ End-to-end testing of the asynchronous path (tenant status change → SQS → hr
 
 **Assessment:** the event-driven **design** (SQS decoupling + DLQ + long-polling consumer, see [Async Messaging](../5.5-Async-SQS/)) is sound; the gap is in the deployment wiring (likely a stale service image and/or consumer startup), and the fix is in progress. This is recorded here as an honest testing finding rather than claimed as passing.
 
-![SQS metrics](../../images/5-Workshop/5.9-Testing/sqs-metrics.png)
 
 ## 7. Observability
 
