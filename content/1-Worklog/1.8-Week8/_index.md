@@ -19,7 +19,7 @@ pre: " <b> 1.8. </b> "
 | Tue | - **AWS Infrastructure:** Account setup, access authorization (IAM), and Terraform initialization. | 09/06/2026 | 09/06/2026 |
 | Wed | - **AWS Infrastructure:** Start configuring VPC and Networking for the project. | 10/06/2026 | 10/06/2026 |
 | Thu | - **AWS Infrastructure:** Finalize Security Groups configuration for network security. | 11/06/2026 | 11/06/2026 |
-| Fri | - **AWS Infrastructure:** Set up Database and secure configurations with SSM Parameter Store. | 12/06/2026 | 12/06/2026 |
+| Fri | - **AWS Infrastructure:** Set up Database. | 12/06/2026 | 12/06/2026 |
 
 ### Week 8 Achievements:
 
@@ -28,4 +28,4 @@ pre: " <b> 1.8. </b> "
 * **Infrastructure Development (AWS & Terraform):**
     * Successfully initialized the Terraform environment and set up secure access permissions for accounts.
     * Deployed the core networking system, including VPC, Subnets, and Security Groups.
-    * Successfully provisioned the Database and set up SSM Parameter Store to safely manage parameters and sensitive information.
+    * Successfully provisioned the Database.

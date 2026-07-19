@@ -19,7 +19,7 @@ pre: " <b> 1.8. </b> "
 | 3 | - **Hạ tầng AWS:** Thiết lập tài khoản, phân quyền truy cập (IAM) và môi trường Terraform. | 09/06/2026 | 09/06/2026 |
 | 4 | - **Hạ tầng AWS:** Bắt đầu cấu hình VPC và Mạng (Network) cho dự án. | 10/06/2026 | 10/06/2026 |
 | 5 | - **Hạ tầng AWS:** Tiếp tục hoàn thiện cấu hình Security Groups để bảo mật mạng. | 11/06/2026 | 11/06/2026 |
-| 6 | - **Hạ tầng AWS:** Thiết lập Database và lưu trữ cấu hình với SSM Parameter Store. | 12/06/2026 | 12/06/2026 |
+| 6 | - **Hạ tầng AWS:** Thiết lập Database. | 12/06/2026 | 12/06/2026 |
 
 ### Kết quả đạt được tuần 8:
 
@@ -28,4 +28,4 @@ pre: " <b> 1.8. </b> "
 * **Về xây dựng hạ tầng (AWS & Terraform):**
     * Khởi tạo thành công môi trường Terraform và thiết lập phân quyền truy cập an toàn cho các tài khoản.
     * Triển khai hoàn thiện hệ thống mạng cơ sở bao gồm VPC, các Subnet và Security Groups.
-    * Khởi tạo thành công cơ sở dữ liệu (Database) và thiết lập SSM Parameter Store để quản lý các tham số, thông tin nhạy cảm một cách an toàn.
+    * Khởi tạo thành công cơ sở dữ liệu (Database).
